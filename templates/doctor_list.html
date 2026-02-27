@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor List</title>
+</head>
+<body>
+    <h1>Doctor List</h1>
+    <a href="/add-doctor/" class="btn btn-success mb-3">Add Doctor</a>
+
+    <ul>
+        {% for doctor in doctors %}
+    
+    <li>
+        {{ doctor.name }} - {{ doctor.specialization }} - {{ doctor.phone }}
+
+        <a href="/edit-doctor/{{ doctor.id }}/">Edit</a>
+        |
+        <a href="/delete-doctor/{{ doctor.id }}/">Delete</a>
+    </li>
+{% empty %}
+    </li>No doctors available</li>
+{% endfor %}
+    </ul>
+
+    <a href="/">Back to Home</a>
+</body>
+</html>

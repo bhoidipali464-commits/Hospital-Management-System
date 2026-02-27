@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointments</title>
+</head>
+<body>
+    <h1>Appointments</h1>
+    <a href="/add-appointment/" class="btn btn-success mb-3">Add Appointment</a>
+
+    <ul>
+        {% for appointment in appointments %}
+            <li>
+                {{ appointment.patient }} with {{ appointment.doctor }} on {{ appointment.date }} at {{ appointment.time }}
+            </li>
+        {% empty %}
+            <li>No appointments available</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Back to Home</a>
+</body>
+</html>
